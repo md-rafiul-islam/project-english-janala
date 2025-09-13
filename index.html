@@ -32,11 +32,11 @@
     />
 
     <!-- css link  -->
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
     <header>
-      <div class="navbar bg-base-100 shadow-sm">
+      <div class="navbar bg-base-100 bg-sky-100 shadow-sm">
         <div class="navbar-start">
           <p class="text-xl flex items-center font-bold">
             <span>English </span><img src="./assets/logo.png" alt="" /><span
@@ -60,7 +60,8 @@
     </header>
 
     <main>
-      <div
+      <!-- banner -->
+      <section
         class="flex flex-col-reverse md:flex-row justify-between items-center my-4 w-11/12 mx-auto"
       >
         <div class="flex-1 text-center md:text-left">
@@ -76,7 +77,28 @@
         <div class="flex-1">
           <img src="./assets/hero-student.png" alt="" />
         </div>
-      </div>
+      </section>
+
+      <!-- lessons -->
+      <section>
+        <h1 class="text-center text-4xl font-bold">
+          <span class="text-sky-400">Let's Learn</span> Vocabulary
+        </h1>
+
+        <!-- lesson id container -->
+        <div
+          id="lesson-container"
+          class="flex flex-wrap justify-center gap-4 my-8"
+        ></div>
+      </section>
+
+      <!-- lesson words container  -->
+      <section
+        id="words-container"
+        class="bg-gray-100 grid grid-cols-3 gap-5 p-10 w-11/12 mx-auto"
+      ></section>
     </main>
+
+    <script src="./script/index.js"></script>
   </body>
 </html>

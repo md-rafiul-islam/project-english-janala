@@ -97,6 +97,22 @@
         id="words-container"
         class="bg-gray-100 grid grid-cols-3 gap-5 p-10 w-11/12 mx-auto"
       ></section>
+
+      <!-- modal -->
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="modal-details" class="text-center flex flex-col">
+            <p>what is this . is it modal</p>
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </main>
 
     <script src="./script/index.js"></script>

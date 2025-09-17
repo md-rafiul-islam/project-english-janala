@@ -36,7 +36,7 @@ const removeActive = () => {
     xyz.classList.remove("active");
   }
 };
-// lessons word
+//fetch lessons word and show in showWords function
 const loadLessonWords = (level) => {
   //active btn add
   const lsnBtn = document.getElementById(`btn-${level}`);
@@ -47,6 +47,30 @@ const loadLessonWords = (level) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => showWords(data.data));
+};
+
+// load word details
+const loadWordDetails = (id) => {
+  const url = `https://openapi.programming-hero.com/api/word/${id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => showWordDetails(data.data));
+};
+
+// show word modal
+const showWordDetails = (data) => {
+  console.log(data.meaning);
+
+  const modalId = document.getElementById("modal-details");
+  modalId.innerHTML = "";
+
+  const xyz = document.createElement("div");
+  xyz.innerHTML = `
+   <p>${data.meaning}</p>
+  `;
+
+  modalId.appendChild(xyz);
+  my_modal_5.show();
 };
 
 const showWords = (levelId) => {
@@ -67,7 +91,7 @@ const showWords = (levelId) => {
             <p class="text-xs py-2">Meaning /Pronounciation</p>
             <p class="font-bangla text-lg font-semibold">"${words.meaning} / ${words.pronunciation}"</p>
             <div class="flex justify-around pt-2">
-              <div class="bg-gray-100 p-1 rounded-md hover:bg-sky-200">
+              <div onclick="loadWordDetails(${words.id})" class="bg-gray-100 p-1 rounded-md hover:bg-sky-200">
                 <i class="fa-solid fa-circle-info"></i>
               </div>
 
